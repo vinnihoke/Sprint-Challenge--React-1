@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // Local Imports
-import './App.scss';
+import './scss/App.scss';
 import CharacterCard from './components/CharacterCard/CharacterCard';
 
 

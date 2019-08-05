@@ -10,10 +10,15 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 // import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
 import Typography from '@material-ui/core/Typography';
+import Icon from '@material-ui/core/Icon';
+import green from '@material-ui/core/colors/green';
 
 // Custom Styles
 import '../CharacterCard/CharacterCard.scss';
+
+console.log(makeStyles)
 
 const useStyles = makeStyles({
   card: {
@@ -22,6 +27,10 @@ const useStyles = makeStyles({
   media: {
     height: 140,
   },
+  button: {
+	padding: 0,
+	margin: 0
+  }
 });
 
 export default function CharacterCard({ character }) {
@@ -54,13 +63,13 @@ export default function CharacterCard({ character }) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
+      <CardActions className="Actions">
+        <Button size="small" variant="outlined" color="primary">
           Filmography
         </Button>
-        <Button size="small" color="primary">
-          Favorite
-        </Button>
+        <Fab size="small" className={classes.button} color="secondary">
+          <Icon>favorite</Icon>
+        </Fab>
       </CardActions>
     </Card>
   );
