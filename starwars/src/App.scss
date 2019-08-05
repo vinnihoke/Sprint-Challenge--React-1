@@ -1,8 +1,16 @@
+@import './scss/mixins.scss';
+
 .App {
   text-align: center;
+  width: 100%;
+  @include flex(column, center, center);
 }
 .Header {
   color: #443e3e;
   text-shadow: 1px 1px 5px #fff;
+}
+
+.CardHolder{
+  @include flex(row wrap, center, center);
 }
 /* write your parent styles in here for your App.js */

@@ -4,4 +4,9 @@ body {
   font-family: sans-serif;
   background-image: url('./sw-bg.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
+
+  @media (min-width: 1000px){
+    height: 100vh;
+  }
 }
