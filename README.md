@@ -26,13 +26,35 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+[ ] React is a Javascript Framework that use component based design and state to update and render a virtual DOM before it being rendered to the actual DOM. This way applicaitons can pass data easier, simplify data handling, and take some of the weight off of the actual DOM. An example of a basic React component would be: 
+
+const user = { name: "Hubert", age: 27 };
+
+const App = () => {
+  const [user, setUser] = useState({ name: "Hubert", age: 27 });
+
+  return <UserInfo user={user} />;
+};
+
+Here is where the magic happens. We are storing a user in a const, then inside of the function we are saying that the 'state' of 'user' is '{ name: "Hubert", age: 27 }'. Then we are passing this information into a component called <UserInfo> that presumably would have some sort of card, or JSX that would render the information that we just passed in to the DOM. 
+
 - [ ] What does it mean to _think_ in react?
+
+[ ] Because React utilizes components and state you must really pay attention to how you design your application. Components can be nested within other components and they can be modular and passed several data points to generate various elements with different data.
 
 - [ ] Describe state.
 
+[ ] Simply put, we need a way to offload a lot of the state (data) that our apps need to use, from the DOM. To keep up with today’s demands of the web, we need a way to build applications that can take care a lot of the work for us. In a process called “reconciliation”, React will detect that the state of the app has changed.
+
 - [ ] Describe props.
 
+[ ] When we want to pass information held on state inside one component to another component, we pass it as props.
+
 - [ ] What are side effects, and how do you sync effects in a React component to state or prop changes?
+
+[ ] Side effects are tricky to define but they are something that is outside the scope of the function that can cause issues for us. For instance an API that is fetching data from a Database can cause issues and might need to be cleaned up before use. You can set conditions that if met, the effect will take place. If something was missing, you wouldn't want the effect to take place, like an error in data retrieval. 
+
+
 
 ## Project Set Up
 
