@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+// Material Icons
+import Icon from '@material-ui/core/Icon'
+
 // Local Imports
 import './scss/App.scss';
 import CharacterCard from './components/CharacterCard/CharacterCard';
@@ -18,24 +21,31 @@ const App = () => {
   // sync up with, if any.
 
   const [characters, setCharacters] = useState([]);
+  const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [header, setHeader] = useState('React Wars');
 
   useEffect(() => {
-    setLoading(true);
+    setHeader('Content Loading...');
     axios
-    .get('https://swapi.co/api/people/')
+    .get(`https://swapi.co/api/people/?page=${page}`)
     .then(results => {
       setCharacters(results.data.results);
-      setLoading(false);
+      setHeader('React Wars');
     })
     .catch(err => {
       console.log(err);
-      setLoading(false);
+      setHeader("Content Load Error");
       alert('There was an error loading the data. Please try again later.')
     })
-  }, [])
+  }, [page])
 
-  console.log(characters);
+  const pageUp = () => {
+    return (page < 9 ? setPage(page + 1) : null);
+  }
+  const pageDown = () => {
+    return (page > 1 ? setPage(page - 1) : null);
+  }
 
   const loadingStyle = {
     color: '#070133',
@@ -47,8 +57,11 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">React Wars</h1>
-      {loading && <h2 style={loadingStyle}>Loading Cards</h2>}
+      <h1 className="Header">{header}</h1>
+
+      <button className="ButtonUp" onClick={pageUp}><Icon>keyboard_arrow_right</Icon></button>
+      <button className="ButtonDown" onClick={pageDown}><Icon>keyboard_arrow_left</Icon></button>
+
       <div className="CardHolder">
         {characters.map((character, index) => {
           return <CharacterCard key={index} character={character}/>
@@ -57,5 +70,6 @@ const App = () => {
     </div>
   );
 }
+
 
 export default App;

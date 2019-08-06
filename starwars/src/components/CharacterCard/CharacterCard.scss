@@ -7,7 +7,6 @@
 	.Actions{
 		@include flex(row wrap, space-between, center);
 		width: 95%;
-		z-index: 1;
 	}
 }
 

@@ -13,12 +13,9 @@ import Button from '@material-ui/core/Button';
 import Fab from '@material-ui/core/Fab';
 import Typography from '@material-ui/core/Typography';
 import Icon from '@material-ui/core/Icon';
-import green from '@material-ui/core/colors/green';
 
 // Custom Styles
 import '../CharacterCard/CharacterCard.scss';
-
-console.log(makeStyles)
 
 const useStyles = makeStyles({
   card: {
