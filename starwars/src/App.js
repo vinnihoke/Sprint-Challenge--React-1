@@ -22,7 +22,6 @@ const App = () => {
 
   const [characters, setCharacters] = useState([]);
   const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(false);
   const [header, setHeader] = useState('React Wars');
 
   useEffect(() => {
@@ -45,14 +44,6 @@ const App = () => {
   }
   const pageDown = () => {
     return (page > 1 ? setPage(page - 1) : null);
-  }
-
-  const loadingStyle = {
-    color: '#070133',
-    position: 'fixed',
-    top: '50%',
-    width: '100%',
-    textAlign: 'center'
   }
 
   return (
