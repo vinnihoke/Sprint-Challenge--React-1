@@ -1,0 +1,43 @@
+@import './mixins.scss';
+
+.App {
+  text-align: center;
+  width: 100%;
+  @include flex(column, center, center);
+}
+.Header {
+  color: #443e3e;
+  text-shadow: 1px 1px 5px #fff;
+}
+
+.CardHolder{
+  @include flex(row wrap, center, center);
+}
+
+.ButtonUp {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  opacity: 0.5;
+  transition: 100ms;
+
+  &:hover{
+    opacity: 0.8
+  }
+}
+
+.ButtonDown {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  opacity: 0.5;
+  transition: 100ms;
+
+  &:hover{
+    opacity: 0.8
+  }
+}
+/* write your parent styles in here for your App.js */
+

@@ -1,0 +1,12 @@
+@import '../../scss/mixins.scss';
+
+.CardContainer {
+	width: 300px;
+	margin: 10px;
+
+	.Actions{
+		@include flex(row wrap, space-between, center);
+		width: 95%;
+	}
+}
+
